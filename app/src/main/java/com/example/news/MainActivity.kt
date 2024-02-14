@@ -33,6 +33,11 @@ class MainActivity : AppCompatActivity() {
 //        }
         val adapter = Adapter(pics,this)
         recyclerView.adapter = adapter
-        recyclerView.setOnClickListener { Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show() }
+        adapter.itemClickListener(object :Adapter.OnItemClickListener{
+            override fun itemClickListener(position: Int) {
+                Toast.makeText(applicationContext, "Hello",Toast.LENGTH_SHORT).show()
+            }
+
+        })
     }
 }
